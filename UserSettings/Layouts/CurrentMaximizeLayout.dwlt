@@ -23,7 +23,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 100}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 1
-  controlID: 3233
+  controlID: 3999
   draggingID: 0
 --- !u!114 &2
 MonoBehaviour:
@@ -92,7 +92,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 1
+    m_EnableMouseInput: 0
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -103,18 +103,18 @@ MonoBehaviour:
       y: 21
       width: 404
       height: 554
-    m_Scale: {x: 0.315625, y: 0.315625}
-    m_Translation: {x: 202, y: 277}
+    m_Scale: {x: 0.32509375, y: 0.32509375}
+    m_Translation: {x: 202.24, y: 277}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -640
-      y: -877.6237
-      width: 1280
-      height: 1755.2474
+      x: -622.0975
+      y: -852.0619
+      width: 1242.7185
+      height: 1704.1238
     m_MinimalGUI: 1
   m_defaultScale: 0.315625
   m_LastWindowPixelSize: {x: 404, y: 575}
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_MinSize: {x: 400, y: 100}
   m_MaxSize: {x: 32384, y: 16192}
   vertical: 0
-  controlID: 3234
+  controlID: 4000
   draggingID: 0
 --- !u!114 &4
 MonoBehaviour:
@@ -173,7 +173,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 1
-  controlID: 3157
+  controlID: 4001
   draggingID: 0
 --- !u!114 &5
 MonoBehaviour:
@@ -200,7 +200,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 50}
   m_MaxSize: {x: 24288, y: 8096}
   vertical: 0
-  controlID: 3158
+  controlID: 4002
   draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -265,8 +265,8 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: b6710000
-      m_LastClickedID: 29110
+      m_SelectedIDs: c4710000
+      m_LastClickedID: 29124
       m_ExpandedIDs: 16fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
@@ -577,10 +577,10 @@ MonoBehaviour:
       containerId: overlay-container--right
       floating: 0
       collapsed: 0
-      displayed: 1
-      snapOffset: {x: 0, y: 0}
+      displayed: 0
+      snapOffset: {x: -231, y: -197}
       snapOffsetDelta: {x: 0, y: 0}
-      snapCorner: 0
+      snapCorner: 3
       id: Scene View/Particles
       index: 9
       layout: 4
@@ -714,9 +714,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -1.0292411, y: -1.3039101, z: -0.1751631}
+    m_Target: {x: -0.9646535, y: -1.060248, z: 0.32453692}
     speed: 2
-    m_Value: {x: -1.0292411, y: -1.3039101, z: -0.1751631}
+    m_Value: {x: -0.9646535, y: -1.060248, z: 0.32453692}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -762,13 +762,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.23692836, y: 0.09222468, z: -0.022599537, w: -0.96687686}
+    m_Target: {x: 0.011612552, y: 0.47419593, z: 0.0062551186, w: -0.8803222}
     speed: 2
-    m_Value: {x: -0.24098313, y: 0.10370465, z: -0.02590789, w: -0.964625}
+    m_Value: {x: 0.011612535, y: 0.47419524, z: 0.00625511, w: -0.88032097}
   m_Size:
-    m_Target: 1.2563964
+    m_Target: 1.7834086
     speed: 2
-    m_Value: 1.2563964
+    m_Value: 1.7834086
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -786,7 +786,7 @@ MonoBehaviour:
     m_FarClip: 10000
     m_DynamicClip: 1
     m_OcclusionCulling: 0
-  m_LastSceneViewRotation: {x: -0.08455328, y: 0.16276017, z: -0.014000964, w: -0.98293716}
+  m_LastSceneViewRotation: {x: -0.23692836, y: 0.09222468, z: -0.022599537, w: -0.96687686}
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 
@@ -1190,7 +1190,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Prefabs/Easy
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -1198,16 +1198,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 71
   m_LastFolders:
-  - Assets
+  - Assets/Prefabs/Easy
   m_LastFoldersGridSize: 71
   m_LastProjectPath: C:\Users\Cosinus\workspace\private\Unity\Endless run
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 82}
-    m_SelectedIDs: ca730000
-    m_LastClickedID: 29642
-    m_ExpandedIDs: 00000000ca73000000ca9a3bffffff7f
+    m_SelectedIDs: f6750000
+    m_LastClickedID: 30198
+    m_ExpandedIDs: 00000000ca7300008675000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1260,9 +1260,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: b6710000
-    m_LastClickedInstanceID: 29110
-    m_HadKeyboardFocusLastEvent: 0
+    m_SelectedInstanceIDs: c4710000
+    m_LastClickedInstanceID: 29124
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000b27f000052020000da750000966f0000b66f0000526f000032870000027100000e7700003c8c00005ea60000c6780000ba780000d2780000e2780000e272000092b00000e47200001c6f00004a7d00001cd0ffff1e780000b4710000e47c000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0

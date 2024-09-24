@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class CreateLevel : MonoBehaviour {
     [SerializeField] private List<GameObject> obstacles = new();
+    private Coroutine CreatObstacles;
 
     private void Start() {
-        StartCoroutine(CreatObstacles());
+        CustomEvent.instance.onPlayerDie += StopSpawningObstacles;
+
+        CreatObstacles = StartCoroutine(CreatObstaclesCoroutine());
     }
 
-    private IEnumerator CreatObstacles() {
+    private IEnumerator CreatObstaclesCoroutine() {
         while (true) {
             int randomObstacle = Random.Range(0, obstacles.Count);
 
@@ -21,5 +24,9 @@ public class CreateLevel : MonoBehaviour {
 
             yield return new WaitForSeconds(2);
         }
+    }
+
+    private void StopSpawningObstacles() {
+        StopCoroutine(CreatObstacles);
     }
 }

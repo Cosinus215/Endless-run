@@ -1,4 +1,5 @@
 
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -10,9 +11,13 @@ public class Player : MonoBehaviour, IDamageable {
     private Rigidbody2D rb;
     private bool isJumping;
     private bool isGrounded;
+    private ParticleSystem cubeDiedParticles;
+    private SpriteRenderer spriteRenderer;
 
     private void Awake() {
         rb = GetComponent<Rigidbody2D>();
+        cubeDiedParticles = GetComponent<ParticleSystem>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
         isGrounded = true;
     }
 
@@ -27,9 +32,12 @@ public class Player : MonoBehaviour, IDamageable {
     public void Damage(int value) {
         health -= value;
         if (health < 1) {
-            Destroy(gameObject);
+            spriteRenderer.enabled = false;
+            cubeDiedParticles.Play();
+            CustomEvent.instance.PlayerDie();
         }
     }
+
 
     private void OnCollisionEnter2D(Collision2D collision) {
         Vector2 collisionNormal = collision.contacts[0].normal;
