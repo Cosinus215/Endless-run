@@ -5,6 +5,7 @@ public class Obstacle : MonoBehaviour {
     [SerializeField] private int damage;
     [SerializeField] private ObstacleEffect obstacleEffect;
     [SerializeField] private float speed;
+    private float velocity;
 
     private void Start() {
         speed = 1;
@@ -31,7 +32,7 @@ public class Obstacle : MonoBehaviour {
 
     private IEnumerator SlowDown() {
         while (speed > 0) {
-            speed = Mathf.MoveTowards(speed, 0f, 0.5f * Time.deltaTime);
+            speed = Mathf.MoveTowards(speed, 0f, 0.2f * Time.deltaTime);
             yield return null;
         }
     }

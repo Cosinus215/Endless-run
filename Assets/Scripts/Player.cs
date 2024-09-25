@@ -1,12 +1,14 @@
-
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering;
 
 public class Player : MonoBehaviour, IDamageable {
     [SerializeField] private int health;
     [SerializeField] private float speed;
     [SerializeField] private float jumpingForce;
+    [SerializeField] private Volume globalVolume;
+    [SerializeField] private GameObject endGamePanel;
     private Vector2 movementVector;
     private Rigidbody2D rb;
     private bool isJumping;
@@ -34,10 +36,15 @@ public class Player : MonoBehaviour, IDamageable {
         if (health < 1) {
             spriteRenderer.enabled = false;
             cubeDiedParticles.Play();
+            EnableEndGameUI();
             CustomEvent.instance.PlayerDie();
         }
     }
 
+    private void EnableEndGameUI() {
+        globalVolume.enabled = true;
+        endGamePanel.SetActive(true);
+    }
 
     private void OnCollisionEnter2D(Collision2D collision) {
         Vector2 collisionNormal = collision.contacts[0].normal;
