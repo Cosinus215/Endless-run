@@ -9,7 +9,6 @@ public class Obstacle : MonoBehaviour {
 
     private void Start() {
         speed = 1;
-        transform.localPosition = new Vector2(transform.localPosition.x, transform.localPosition.y);
         CustomEvent.instance.onPlayerDie += StartToSlowDown;
     }
 

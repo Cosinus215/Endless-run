@@ -5,11 +5,19 @@ using UnityEngine;
 public class CreateLevel : MonoBehaviour {
     [SerializeField] private List<GameObject> obstacles = new();
     private Coroutine CreatObstacles;
+    private Vector2 obstacleSpawnPoint;
 
     private void Start() {
+        SetObstaclesSpawnPoint();
         CustomEvent.instance.onPlayerDie += StopSpawningObstacles;
 
         CreatObstacles = StartCoroutine(CreatObstaclesCoroutine());
+    }
+
+    private void SetObstaclesSpawnPoint() {
+        Vector2 screenBorders = 
+            Helpers.CameraHelper.GetCameraBordersWorldPosition();
+        obstacleSpawnPoint = new Vector2(screenBorders.x + 3, 0);
     }
 
     private IEnumerator CreatObstaclesCoroutine() {
@@ -20,7 +28,7 @@ public class CreateLevel : MonoBehaviour {
                 obstacles[randomObstacle], transform
             );
 
-            newObstacle.transform.localPosition = new Vector2 (0, newObstacle.transform.position.y);
+            newObstacle.transform.localPosition = obstacleSpawnPoint;
 
             yield return new WaitForSeconds(2);
         }
