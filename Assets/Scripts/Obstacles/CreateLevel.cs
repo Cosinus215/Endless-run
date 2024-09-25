@@ -22,6 +22,7 @@ public class CreateLevel : MonoBehaviour {
 
     private IEnumerator CreatObstaclesCoroutine() {
         while (true) {
+            yield return new WaitForSeconds(2);
             int randomObstacle = Random.Range(0, obstacles.Count);
 
             GameObject newObstacle = Instantiate(
@@ -30,7 +31,6 @@ public class CreateLevel : MonoBehaviour {
 
             newObstacle.transform.localPosition = obstacleSpawnPoint;
 
-            yield return new WaitForSeconds(2);
         }
     }
 

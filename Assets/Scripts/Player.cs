@@ -51,7 +51,6 @@ public class Player : MonoBehaviour, IDamageable {
         if (collisionNormal.y > 0) {
             isGrounded = true;
         }
-
     }
 
     private void OnCollisionExit2D(Collision2D collision) {

@@ -1,11 +1,10 @@
 using System.Collections;
 using UnityEngine;
 
-public class Obstacle : MonoBehaviour {
+public class Obstacle : MonoBehaviour, IDestroyable {
     [SerializeField] private int damage;
     [SerializeField] private ObstacleEffect obstacleEffect;
     [SerializeField] private float speed;
-    private float velocity;
 
     private void Start() {
         speed = 1;
@@ -13,7 +12,16 @@ public class Obstacle : MonoBehaviour {
     }
 
     private void FixedUpdate() {
-        transform.position = new Vector2(transform.position.x - 0.12f * speed, transform.position.y);
+        transform.position = 
+            new Vector2(transform.position.x - 0.12f * speed, transform.position.y);
+    }
+
+    private void OnDestroy() {
+        CustomEvent.instance.onPlayerDie -= StartToSlowDown;
+    }
+
+    public void DestroyObject() {       
+        Destroy(gameObject); 
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {

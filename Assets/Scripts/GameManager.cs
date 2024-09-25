@@ -1,18 +1,30 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+public class GameManager : MonoBehaviour {
+    public static GameManager instance;
+    [SerializeField] private GameObject borderPrefab;
+    [SerializeField] private GameObject obstacleBorderPrefab;
+
+    private void Awake() {
+        if (instance != null) {
+            Destroy(this);
+        }
+        instance = this;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    private void Start() {
+        SetUpBorders();
+    }
+
+    private void SetUpBorders() {
+        Vector2 screenBorders = 
+            Helpers.CameraHelper.GetCameraBordersWorldPosition();
+
+        for (float i = -1; i < 2; i += 2) {
+            GameObject border = Instantiate(borderPrefab);
+
+            border.transform.position = new Vector2((screenBorders.x * i) + i, 0);
+        }
+        GameObject obstaclesBorder = Instantiate(obstacleBorderPrefab);
     }
 }

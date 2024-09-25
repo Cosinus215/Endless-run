@@ -735,6 +735,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65b1047a3e1ac8146a294ce6ce2fda7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  borderPrefab: {fileID: 7949073523174439501, guid: 41d307d558353d247ae653ca71162f99, type: 3}
+  obstacleBorderPrefab: {fileID: 7949073523174439501, guid: 5b265c1895b2122479f56a6d42761e7c, type: 3}
 --- !u!1 &1350256418
 GameObject:
   m_ObjectHideFlags: 0
@@ -873,8 +875,9 @@ MonoBehaviour:
   - {fileID: 3875032777784036723, guid: 4c612994ced894247ac0200a0bb968fc, type: 3}
   - {fileID: 5760192869713379619, guid: 2ac4acca5d693d9448a4dc68873f1899, type: 3}
   - {fileID: 6018257303382412731, guid: a5aae3f40cff3594281db4fa20203fce, type: 3}
-  - {fileID: 247753286699377402, guid: 4a55682f69ad0b840bfc92c1728204dc, type: 3}
+  - {fileID: 5766572060701686029, guid: c7c7d5223f2e1be4087e255df4117913, type: 3}
   - {fileID: 4321162421838721895, guid: 2a23de06355606a41bc803b05999f088, type: 3}
+  - {fileID: 2528831062536758237, guid: 69ca470fa1ac106428c2c117d8cb6cab, type: 3}
 --- !u!4 &1536881982
 Transform:
   m_ObjectHideFlags: 0

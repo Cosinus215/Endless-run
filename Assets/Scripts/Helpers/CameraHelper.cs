@@ -7,7 +7,7 @@ namespace Helpers {
             float worldDistanceFromCamera = -Camera.main.transform.position.z;
             Vector3 bordersScreenPosition = new Vector3(Screen.width, Screen.height, worldDistanceFromCamera);
             Vector2 bordersWorldPosition = Camera.main.ScreenToWorldPoint(bordersScreenPosition);
-            return new Vector2(bordersWorldPosition.x, bordersWorldPosition.y);
+            return new Vector2(bordersWorldPosition.x, 0);
         }
     }
 }
