@@ -25,6 +25,7 @@ public class ObstacleEffect : ScriptableObject {
 
     private void ApplySuperJump(GameObject player) {
         if (player.TryGetComponent(out Rigidbody2D rb))
+            rb.velocity = Vector2.zero;
             rb.AddForce(Vector2.up * intensity, ForceMode2D.Impulse);
     }
     
