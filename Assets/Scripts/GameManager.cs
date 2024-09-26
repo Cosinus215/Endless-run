@@ -1,9 +1,12 @@
+using System.Collections;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour {
     public static GameManager instance;
+    public int points;
     [SerializeField] private GameObject borderPrefab;
     [SerializeField] private GameObject obstacleBorderPrefab;
+    private Coroutine PointsCounter;
 
     private void Awake() {
         if (instance != null) {
@@ -14,6 +17,12 @@ public class GameManager : MonoBehaviour {
 
     private void Start() {
         SetUpBorders();
+        CustomEvent.instance.onPlayerDie += StopCountingPoints;
+        PointsCounter = StartCoroutine(PointsCounterCoroutin());
+    }
+
+    public void StopCountingPoints() {
+        StopCoroutine(PointsCounter);
     }
 
     private void SetUpBorders() {
@@ -26,5 +35,12 @@ public class GameManager : MonoBehaviour {
             border.transform.position = new Vector2((screenBorders.x * i) + i, 0);
         }
         GameObject obstaclesBorder = Instantiate(obstacleBorderPrefab);
+    }
+
+    private IEnumerator PointsCounterCoroutin() {
+        while (true) {
+            points++;
+            yield return new WaitForSeconds(1);
+        }
     }
 }
