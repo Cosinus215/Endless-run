@@ -7,8 +7,7 @@ public class Obstacle : MonoBehaviour, IDestroyable {
     [SerializeField] private float speed;
 
     private void Start() {
-        speed = 1;
-        CustomEvent.instance.onPlayerDie += StartToSlowDown;
+        CustomEvent.instance.onPlayerDie += StartToSlowDown;      
     }
 
     private void FixedUpdate() {

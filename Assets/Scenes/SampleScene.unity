@@ -1010,15 +1010,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obstacles:
+  - {fileID: 562379646235016868, guid: 9ac869f3d8ef2ce47aea9e4b6ccb7c0c, type: 3}
   - {fileID: 8873845455465790472, guid: 8d98e127d57788647a6a1ad287205f0e, type: 3}
   - {fileID: 7404301013286141534, guid: f5f450736b348494880c7b30ba53456c, type: 3}
+  - {fileID: 2528831062536758237, guid: 69ca470fa1ac106428c2c117d8cb6cab, type: 3}
   - {fileID: 9085589815550664750, guid: 33f68928194af1143a7ef48775dcaca5, type: 3}
+  - {fileID: 4321162421838721895, guid: 2a23de06355606a41bc803b05999f088, type: 3}
   - {fileID: 3875032777784036723, guid: 4c612994ced894247ac0200a0bb968fc, type: 3}
-  - {fileID: 5760192869713379619, guid: 2ac4acca5d693d9448a4dc68873f1899, type: 3}
   - {fileID: 6018257303382412731, guid: a5aae3f40cff3594281db4fa20203fce, type: 3}
   - {fileID: 5766572060701686029, guid: c7c7d5223f2e1be4087e255df4117913, type: 3}
-  - {fileID: 4321162421838721895, guid: 2a23de06355606a41bc803b05999f088, type: 3}
-  - {fileID: 2528831062536758237, guid: 69ca470fa1ac106428c2c117d8cb6cab, type: 3}
+  - {fileID: 5760192869713379619, guid: 2ac4acca5d693d9448a4dc68873f1899, type: 3}
 --- !u!4 &1536881982
 Transform:
   m_ObjectHideFlags: 0
