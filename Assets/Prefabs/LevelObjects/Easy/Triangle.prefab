@@ -171,10 +171,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea0a9fff2cec3db4d90c28637c8246a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movable: 1
   damage: 1
   obstacleEffect: {fileID: 0}
-  speed: 0
+  speed: 1
 --- !u!1 &5766572060701686029
 GameObject:
   m_ObjectHideFlags: 0

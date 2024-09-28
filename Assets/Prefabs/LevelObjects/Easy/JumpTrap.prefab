@@ -29,8 +29,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 6594444362486408301}
   - {fileID: 8141124807432678523}
+  - {fileID: 6478355857633951607}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &3615565225932785504
@@ -90,9 +90,9 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69ca470fa1ac106428c2c117d8cb6cab, type: 3}
---- !u!4 &6594444362486408301 stripped
+--- !u!4 &6478355857633951607 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 7613684126715929357, guid: 69ca470fa1ac106428c2c117d8cb6cab, type: 3}
+  m_CorrespondingSourceObject: {fileID: 7767213190847215639, guid: 69ca470fa1ac106428c2c117d8cb6cab, type: 3}
   m_PrefabInstance: {fileID: 3615565225932785504}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4518962661562278152
