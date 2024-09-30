@@ -5,9 +5,8 @@ using UnityEngine.SceneManagement;
 [CreateAssetMenu(fileName = "ButtonManager", menuName = "ButtonManager/New ButtonManager")]
 public class ButtonManager : ScriptableObject {
 
-    public void LoadNewScene(string scene) {
-        //PlayButtonClickSound();
-        SceneManager.LoadScene(scene);
+    public void LoadScene(int sceneIndex) {
+        SceneManager.LoadScene(sceneIndex);
     }
 
     //public void SwitchMusic(AudioClip backgroundMusic) {
