@@ -5,8 +5,16 @@ using UnityEngine.SceneManagement;
 [CreateAssetMenu(fileName = "ButtonManager", menuName = "ButtonManager/New ButtonManager")]
 public class ButtonManager : ScriptableObject {
 
-    public void LoadScene(int sceneIndex) {
-        SceneManager.LoadScene(sceneIndex);
+    public void LoadGamePlayScene() {
+        MainMenuManager.instance.StartMovingCanvas();
+    } 
+    
+    public void RestartGamePlayScene() {
+        SceneManager.LoadScene(1);
+    }
+    
+    public void LoadMenuScene() {
+        SceneManager.LoadScene(0);
     }
 
     //public void SwitchMusic(AudioClip backgroundMusic) {

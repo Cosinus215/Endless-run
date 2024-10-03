@@ -5,6 +5,14 @@ using UnityEngine;
 public class BackgroundColor : MonoBehaviour {
     [SerializeField] private float hueChangeSpeed = 0.1f;
     private float hue;
+    public float saturation;
+    public float brightness;
+    public float color;
+
+    private void Start() {
+        Color.RGBToHSV(Camera.main.backgroundColor, out color, out saturation, out brightness);
+        hue = color;
+    }
 
     private void FixedUpdate() {
         ChangeHue();
