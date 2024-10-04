@@ -17,6 +17,10 @@ public class ButtonManager : ScriptableObject {
         SceneManager.LoadScene(0);
     }
 
+    public void SetLevel(Level level) {
+        LevelManager.instance.SetChosenLevel(level);
+    }
+
     //public void SwitchMusic(AudioClip backgroundMusic) {
     //    MusicManager.instance.PlayMusic(backgroundMusic);
     //}

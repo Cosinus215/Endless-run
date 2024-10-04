@@ -1,15 +1,16 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CreateLevel : MonoBehaviour {
-    [SerializeField] private List<GameObject> obstacles = new();
+    [SerializeField] private Level level;
     private Coroutine CreatObstacles;
     private Vector2 obstacleSpawnPoint;
 
     private void Start() {
         SetObstaclesSpawnPoint();
         CustomEvent.instance.onPlayerDie += StopSpawningObstacles;
+
+        level = LevelManager.instance.GetChosenLevel();
 
         CreatObstacles = StartCoroutine(CreatObstaclesCoroutine());
     }
@@ -23,10 +24,13 @@ public class CreateLevel : MonoBehaviour {
     private IEnumerator CreatObstaclesCoroutine() {
         while (true) {
             yield return new WaitForSeconds(2);
-            int randomObstacle = Random.Range(0, obstacles.Count);
+
+            if (level == null) yield return null;
+
+            int randomObstacle = Random.Range(0, level.GetObstacles().Count);
 
             GameObject newObstacle = Instantiate(
-                obstacles[randomObstacle], transform
+                level.GetObstacles()[randomObstacle], transform
             );
 
             newObstacle.transform.localPosition = obstacleSpawnPoint;
