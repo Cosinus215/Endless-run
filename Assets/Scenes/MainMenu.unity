@@ -1405,6 +1405,7 @@ MonoBehaviour:
   wavelength: 9.15
   amplitude: 1
   waveSpeed: 1.8
+  movementSpeed: 1.4
 --- !u!120 &1524588734
 LineRenderer:
   serializedVersion: 2

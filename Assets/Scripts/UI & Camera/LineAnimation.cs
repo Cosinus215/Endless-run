@@ -6,6 +6,7 @@ public class LineAnimation : MonoBehaviour {
     [SerializeField] private float wavelength;
     [SerializeField] private float amplitude;
     [SerializeField] private float waveSpeed;
+    [SerializeField] private float movementSpeed;
 
     private void Awake() {
         lineRenderer = GetComponent<LineRenderer>();
@@ -28,7 +29,7 @@ public class LineAnimation : MonoBehaviour {
                 y = amplitude * Mathf.Sin(k * x + w * Time.time);
                 lineRenderer.SetPosition(i, new Vector3(x, y, 0) + startPoint + newPos2);
             }
-            newPos2 += new Vector3(0.02f, 0, 0);
+            newPos2 += new Vector3(movementSpeed * Time.deltaTime, 0, 0);
 
             if (lineRenderer.GetPosition(0).x > 10) {
                 newPos2 = Vector3.zero;
