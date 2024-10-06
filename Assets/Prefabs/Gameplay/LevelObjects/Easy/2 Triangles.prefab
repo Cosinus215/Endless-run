@@ -173,7 +173,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   obstacleEffect: {fileID: 0}
-  speed: 1
+  speed: 50
 --- !u!1 &7999241040745394499
 GameObject:
   m_ObjectHideFlags: 0
@@ -347,7 +347,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   obstacleEffect: {fileID: 0}
-  speed: 1
+  speed: 50
 --- !u!1 &8873845455465790472
 GameObject:
   m_ObjectHideFlags: 0

@@ -173,7 +173,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   obstacleEffect: {fileID: 0}
-  speed: 1
+  speed: 50
 --- !u!1 &2550594729178392086
 GameObject:
   m_ObjectHideFlags: 0
@@ -347,7 +347,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   obstacleEffect: {fileID: 0}
-  speed: 1
+  speed: 50
 --- !u!1 &3716064095518045983
 GameObject:
   m_ObjectHideFlags: 0
@@ -521,7 +521,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   obstacleEffect: {fileID: 0}
-  speed: 1
+  speed: 50
 --- !u!1 &7388773306400930661
 GameObject:
   m_ObjectHideFlags: 0
@@ -695,7 +695,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   obstacleEffect: {fileID: 0}
-  speed: 1
+  speed: 50
 --- !u!1 &7404301013286141534
 GameObject:
   m_ObjectHideFlags: 0
@@ -906,7 +906,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   obstacleEffect: {fileID: 0}
-  speed: 1
+  speed: 50
 --- !u!1 &9100162824836953134
 GameObject:
   m_ObjectHideFlags: 0
@@ -1080,4 +1080,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   obstacleEffect: {fileID: 0}
-  speed: 1
+  speed: 50

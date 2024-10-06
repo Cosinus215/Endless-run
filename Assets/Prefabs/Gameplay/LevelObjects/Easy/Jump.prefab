@@ -5036,4 +5036,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   obstacleEffect: {fileID: 11400000, guid: 02bc6031056e53c429381288f033565c, type: 2}
-  speed: 1
+  speed: 50

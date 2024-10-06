@@ -23,8 +23,8 @@ public class Player : MonoBehaviour, IDamageable {
         isGrounded = true;
     }
 
-    private void Update() {
-        rb.velocity = new Vector2(movementVector.x * speed, rb.velocity.y);
+    private void FixedUpdate() {
+        rb.velocity = new Vector2(movementVector.x * speed * Time.fixedDeltaTime, rb.velocity.y);
 
         if (isJumping && Mathf.Abs(rb.velocity.y) < 0.01f && isGrounded) {
             rb.AddForce(Vector2.up * jumpingForce, ForceMode2D.Impulse);

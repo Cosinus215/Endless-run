@@ -10,9 +10,9 @@ public class Obstacle : MonoBehaviour, IDestroyable {
         CustomEvent.instance.onPlayerDie += StartToSlowDown;      
     }
 
-    private void FixedUpdate() {
+    private void Update() {
         transform.position = 
-            new Vector2(transform.position.x - 0.12f * speed, transform.position.y);
+            new Vector2(transform.position.x - 0.12f * speed * Time.deltaTime, transform.position.y);
     }
 
     private void OnDestroy() {
