@@ -6,6 +6,7 @@ using UnityEngine;
 public class Timer : MonoBehaviour {
     public static Timer Instance;
     [SerializeField] private TextMeshProUGUI pointsText;
+    [SerializeField] private HighScores highScores;
     private float timer;
     private Coroutine UpdateTimer;
 
@@ -23,6 +24,11 @@ public class Timer : MonoBehaviour {
 
     public void StopTimer() {
         StopCoroutine(UpdateTimer);
+        SaveHighScore();
+    }
+
+    private void SaveHighScore() {
+        highScores.SetHighScore(LevelManager.instance.GetChosenLevelName(), pointsText.text);
     }
 
     private IEnumerator UpdateTimerCoroutin() {

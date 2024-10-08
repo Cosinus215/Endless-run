@@ -8,6 +8,8 @@ public class LevelManager : MonoBehaviour {
         return chosenLevel;
     }
 
+    public LevelName GetChosenLevelName() => chosenLevel.GetLevelName();
+
     public void SetChosenLevel(Level value) {
         chosenLevel = value;
     }

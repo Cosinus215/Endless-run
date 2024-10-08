@@ -1130,6 +1130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pointsText: {fileID: 4407418}
+  highScores: {fileID: 11400000, guid: 58a058ea32e87aa4589995d47c555351, type: 2}
 --- !u!1 &1350256418
 GameObject:
   m_ObjectHideFlags: 0

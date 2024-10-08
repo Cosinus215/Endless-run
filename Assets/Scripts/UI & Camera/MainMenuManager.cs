@@ -1,5 +1,7 @@
 using Helpers;
 using System.Collections;
+using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
@@ -8,6 +10,10 @@ public class MainMenuManager : MonoBehaviour {
     public static MainMenuManager instance;
     [SerializeField] private GameObject cube;
     [SerializeField] private GameObject canvaToMove;
+    [SerializeField] private HighScores highScores;
+    [SerializeField] private TextMeshProUGUI highScoreEasyText;
+    [SerializeField] private TextMeshProUGUI highScoreMediumText;
+    [SerializeField] private TextMeshProUGUI highScoreHardText;
     private AsyncOperation sceneLoaded;
     private Camera mainCamera;
     private BackgroundColor backgroundColor;
@@ -21,8 +27,29 @@ public class MainMenuManager : MonoBehaviour {
     private void Start() {
         GetDefaultVariables();
         LoadGameplayScene();
+        SetHigScores();
     }
     
+    private void SetHigScores() {
+        foreach (HighScore score in highScores.GetHighScores()) {
+            switch (score.levelName) {
+                case LevelName.Easy:
+                    highScoreEasyText.SetText(score.time);
+                    break;
+                case LevelName.Medium:
+                    highScoreMediumText.SetText(score.time);
+                    break;
+                case LevelName.Hard:
+                    highScoreHardText.SetText(score.time);
+                    break;
+        
+            }
+        }
+        //Debug.Log(highScores.highScoreEasy);
+        //highScoreEasyText.SetText(highScores.highScoreMedium.ToString());
+        //highScoreEasyText.SetText(highScores.highScoreHard.ToString());
+    }
+
     private void GetDefaultVariables() {
         mainCamera = Camera.main;
         backgroundColor = mainCamera.GetComponent<BackgroundColor>();
