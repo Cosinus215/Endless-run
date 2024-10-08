@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
     public static GameManager instance;
@@ -13,6 +14,7 @@ public class GameManager : MonoBehaviour {
     }
 
     private void Start() {
+        SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(1));
         SetUpBorders();
     }
 
