@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scores:
   - levelName: 0
-    time: 00:00:03.73
+    time: 00:00:05.51
   - levelName: 1
-    time: 00:00:06.19
+    time: 00:00:04.63
   - levelName: 2
-    time: 
+    time: 00:00:00.00

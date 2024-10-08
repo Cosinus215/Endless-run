@@ -32,22 +32,20 @@ public class MainMenuManager : MonoBehaviour {
     
     private void SetHigScores() {
         foreach (HighScore score in highScores.GetHighScores()) {
+
             switch (score.levelName) {
                 case LevelName.Easy:
-                    highScoreEasyText.SetText(score.time);
+                    highScoreEasyText.SetText($"{score.levelName}: {score.time}");
                     break;
                 case LevelName.Medium:
-                    highScoreMediumText.SetText(score.time);
+                    highScoreMediumText.SetText($"{score.levelName}: {score.time}");
                     break;
                 case LevelName.Hard:
-                    highScoreHardText.SetText(score.time);
+                    highScoreHardText.SetText($"{score.levelName}: {score.time}");
                     break;
         
             }
         }
-        //Debug.Log(highScores.highScoreEasy);
-        //highScoreEasyText.SetText(highScores.highScoreMedium.ToString());
-        //highScoreEasyText.SetText(highScores.highScoreHard.ToString());
     }
 
     private void GetDefaultVariables() {
