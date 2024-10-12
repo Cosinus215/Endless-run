@@ -9,7 +9,7 @@ public class Player : MonoBehaviour, IDamageable {
     [SerializeField] private float jumpingForce;
     [SerializeField] private Volume globalVolume;
     [SerializeField] private GameObject endGamePanel;
-    private Vector2 movementVector;
+    public Vector2 movementVector;
     private Rigidbody2D rb;
     private bool isJumping;
     private bool isGrounded;
