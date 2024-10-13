@@ -4,8 +4,8 @@ using UnityEngine;
 public class TrialEffect : MonoBehaviour {
     private LineRenderer lineRenderer;
     private Player player;
-    private Vector3 moveVector;
-    [SerializeField] private float moveSpeed;
+    [SerializeField] private float moveSpeedNotMoving;
+    [SerializeField] private float moveSpeedMoving;
     [SerializeField] private float comeBackSpeed;
 
     private void Awake() {
@@ -13,7 +13,6 @@ public class TrialEffect : MonoBehaviour {
     }
 
     private void Start() {
-        SetUpMoveVector();
         StartCoroutine(MakeTrial());
     }
 
@@ -22,53 +21,31 @@ public class TrialEffect : MonoBehaviour {
         player = GetComponent<Player>();
     }
 
-    private void SetUpMoveVector() {
-        moveVector = new Vector3(moveSpeed, 0, 0);
-    }
-
     private IEnumerator MakeTrial() {
+        Vector3 moveVector;
         while (true) {
-            if (lineRenderer.positionCount > 30) {
-                DeleteFirstPos();
-            }
-
             Vector3 playerPos = transform.position;
+
+            // Player is moving
+            moveVector = new Vector3(moveSpeedMoving * player.movementVector.x, 0, 0);
 
             // Player is not moving
             if (player.movementVector == Vector2.zero) {
-                lineRenderer.SetPosition(lineRenderer.positionCount - 1, playerPos);
-
-                for (int i = lineRenderer.positionCount - 2; i >= 0; i--) {
-                    Vector3 targetPos = lineRenderer.GetPosition(i + 1) - moveVector;
-                    Vector3 newPos = Vector3.Lerp(
-                        lineRenderer.GetPosition(i),
-                        targetPos,
-                        Time.deltaTime * comeBackSpeed
-                    );
-
-                    lineRenderer.SetPosition(i, newPos);
-                }
-                yield return null;
+                moveVector = new Vector3(moveSpeedNotMoving, 0, 0);
             }
+            
+            lineRenderer.SetPosition(lineRenderer.positionCount - 1, playerPos);
+            for (int i = lineRenderer.positionCount - 2; i >= 0; i--) {
+                Vector3 targetPos = lineRenderer.GetPosition(i + 1) - moveVector;
+                Vector3 newPos = Vector3.Lerp(
+                    lineRenderer.GetPosition(i),
+                    targetPos,
+                    Time.deltaTime * comeBackSpeed
+                );
 
-            // Player is moving
-            if (lineRenderer.GetPosition(lineRenderer.positionCount - 1) != playerPos) {
-                lineRenderer.positionCount++;
-                lineRenderer.SetPosition(lineRenderer.positionCount - 1, playerPos);
+                lineRenderer.SetPosition(i, newPos);
             }
             yield return null;
         }
-    }
-
-
-    private void DeleteFirstPos() {
-        Vector3[] newPositions = new Vector3[lineRenderer.positionCount - 1];
-
-        for (int i = 1; i < lineRenderer.positionCount; i++) {
-            newPositions[i - 1] = lineRenderer.GetPosition(i);
-        }
-
-        lineRenderer.positionCount = newPositions.Length;
-        lineRenderer.SetPositions(newPositions);
     }
 }
