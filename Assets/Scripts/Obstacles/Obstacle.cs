@@ -5,14 +5,19 @@ public class Obstacle : MonoBehaviour, IDestroyable {
     [SerializeField] private int damage;
     [SerializeField] private ObstacleEffect obstacleEffect;
     [SerializeField] private float speed;
+    private float speedMultiplier;
 
     private void Start() {
-        CustomEvent.instance.onPlayerDie += StartToSlowDown;      
+        CustomEvent.instance.onPlayerDie += StartToSlowDown;
+        speedMultiplier = GameManager.instance.GetSpeedMultiplier();
     }
 
     private void Update() {
         transform.position = 
-            new Vector2(transform.position.x - 0.12f * speed * Time.deltaTime, transform.position.y);
+            new Vector2(
+                transform.position.x - 0.12f * speed * speedMultiplier * Time.deltaTime, 
+                transform.position.y
+            );
     }
 
     private void OnDestroy() {

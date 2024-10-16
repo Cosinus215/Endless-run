@@ -1116,6 +1116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   borderPrefab: {fileID: 7949073523174439501, guid: 41d307d558353d247ae653ca71162f99, type: 3}
+  speedMultiplier: 2
   obstacleBorderPrefab: {fileID: 7949073523174439501, guid: 5b265c1895b2122479f56a6d42761e7c, type: 3}
 --- !u!114 &1137982107
 MonoBehaviour:

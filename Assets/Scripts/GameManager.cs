@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour {
     public static GameManager instance;
     [SerializeField] private GameObject borderPrefab;
+    [SerializeField] private float speedMultiplier;
     [SerializeField] private GameObject obstacleBorderPrefab;
 
     private void Awake() {
@@ -28,5 +29,9 @@ public class GameManager : MonoBehaviour {
             border.transform.position = new Vector2((screenBorders.x * i) + i, 0);
         }
         Instantiate(obstacleBorderPrefab);
+    }
+
+    public float GetSpeedMultiplier() {
+        return speedMultiplier;
     }
 }
