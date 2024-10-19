@@ -1,7 +1,10 @@
+using System;
 using System.Collections;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
+using UnityEngine.UIElements;
 
 public class Player : MonoBehaviour, IDamageable {
     [SerializeField] private int health;
@@ -9,6 +12,7 @@ public class Player : MonoBehaviour, IDamageable {
     [SerializeField] private float jumpingForce;
     [SerializeField] private Volume globalVolume;
     [SerializeField] private GameObject endGamePanel;
+    private int finalRotation;
     public Vector2 movementVector;
     private Rigidbody2D rb;
     private bool isJumping;
@@ -27,7 +31,9 @@ public class Player : MonoBehaviour, IDamageable {
         rb.velocity = new Vector2(movementVector.x * speed * Time.fixedDeltaTime, rb.velocity.y);
 
         if (isJumping && Mathf.Abs(rb.velocity.y) < 0.01f && isGrounded) {
+            StartCoroutine(RotatePlayer());
             rb.AddForce(Vector2.up * jumpingForce, ForceMode2D.Impulse);
+            //Debug.Log("JUMP");
         }
     }
 
@@ -72,5 +78,21 @@ public class Player : MonoBehaviour, IDamageable {
         if (context.canceled) {
             isJumping = false;
         }
+    }
+
+    private IEnumerator RotatePlayer() {
+        finalRotation += 90;
+        if (finalRotation == 270) finalRotation = -90;
+
+        Quaternion newRotation = Quaternion.Euler(0, 0, -finalRotation);
+        float speed = 0.7f;
+        float timeCount = 0.0f;
+
+        while (transform.rotation != newRotation) {
+            transform.rotation = Quaternion.Lerp(transform.rotation, newRotation, timeCount * speed);
+            timeCount = timeCount + Time.deltaTime;
+            yield return null;
+        }
+        transform.rotation = newRotation;
     }
 }
