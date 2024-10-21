@@ -10,6 +10,8 @@ public class CreateLevel : MonoBehaviour {
         SetObstaclesSpawnPoint();
         CustomEvent.instance.onPlayerDie += StopSpawningObstacles;
 
+        if (LevelManager.instance == null) return;
+
         level = LevelManager.instance.GetChosenLevel();
 
         CreatObstacles = StartCoroutine(CreatObstaclesCoroutine());

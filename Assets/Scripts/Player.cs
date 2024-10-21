@@ -9,6 +9,7 @@ using UnityEngine.UIElements;
 public class Player : MonoBehaviour, IDamageable {
     [SerializeField] private int health;
     [SerializeField] private float speed;
+    [SerializeField] private float rotationSpeed;
     [SerializeField] private float jumpingForce;
     [SerializeField] private Volume globalVolume;
     [SerializeField] private GameObject endGamePanel;
@@ -25,13 +26,14 @@ public class Player : MonoBehaviour, IDamageable {
         cubeDiedParticles = GetComponent<ParticleSystem>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         isGrounded = true;
+        finalRotation = -360;
     }
 
     private void FixedUpdate() {
         rb.velocity = new Vector2(movementVector.x * speed * Time.fixedDeltaTime, rb.velocity.y);
 
         if (isJumping && Mathf.Abs(rb.velocity.y) < 0.01f && isGrounded) {
-            StartCoroutine(RotatePlayer());
+            //StartCoroutine(RotatePlayer());
             rb.AddForce(Vector2.up * jumpingForce, ForceMode2D.Impulse);
             //Debug.Log("JUMP");
         }
@@ -61,6 +63,7 @@ public class Player : MonoBehaviour, IDamageable {
 
     private void OnCollisionExit2D(Collision2D collision) {
         if (collision.contacts.Length == 0) {
+            StartCoroutine(RotatePlayer());
             isGrounded = false;
         }
 
@@ -81,18 +84,22 @@ public class Player : MonoBehaviour, IDamageable {
     }
 
     private IEnumerator RotatePlayer() {
-        finalRotation += 90;
-        if (finalRotation == 270) finalRotation = -90;
+        finalRotation += 180;
+        if (finalRotation == 0) finalRotation = -360;
 
-        Quaternion newRotation = Quaternion.Euler(0, 0, -finalRotation);
-        float speed = 0.7f;
+        Quaternion targetRotation = Quaternion.Euler(0, 0, finalRotation);
         float timeCount = 0.0f;
+        float angleDifferenceThreshold = 0.01f;
 
-        while (transform.rotation != newRotation) {
-            transform.rotation = Quaternion.Lerp(transform.rotation, newRotation, timeCount * speed);
-            timeCount = timeCount + Time.deltaTime;
+        while (Quaternion.Angle(transform.rotation, targetRotation) > angleDifferenceThreshold) {
+            float t = timeCount * rotationSpeed;
+            float newZRotation = Mathf.Lerp(finalRotation - 180, finalRotation, t);
+            Quaternion newRotation = Quaternion.Euler(0, 0, newZRotation);
+            transform.rotation = Quaternion.Inverse(newRotation);
+
+            timeCount += Time.deltaTime;
             yield return null;
         }
-        transform.rotation = newRotation;
     }
+
 }
