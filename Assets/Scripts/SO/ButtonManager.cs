@@ -21,6 +21,10 @@ public class ButtonManager : ScriptableObject {
         LevelManager.instance.SetChosenLevel(level);
     }
 
+    public void ToggleCanvasGroup(CanvasGroup canvasGroup) {
+        canvasGroup.interactable = false;
+    }
+
     //public void SwitchMusic(AudioClip backgroundMusic) {
     //    MusicManager.instance.PlayMusic(backgroundMusic);
     //}

@@ -158,7 +158,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 165.32506, y: -202.10498}
+  m_AnchoredPosition: {x: 165.32504, y: -202.10498}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &208565717
@@ -704,6 +704,7 @@ GameObject:
   - component: {fileID: 378265038}
   - component: {fileID: 378265040}
   - component: {fileID: 378265039}
+  - component: {fileID: 378265041}
   m_Layer: 5
   m_Name: Levels
   m_TagString: Untagged
@@ -728,7 +729,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 29.130005}
+  m_AnchoredPosition: {x: 1390.4, y: 0}
   m_SizeDelta: {x: -1059.26, y: -646.15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &378265039
@@ -769,6 +770,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 378265037}
   m_CullTransparentMesh: 1
+--- !u!114 &378265041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 378265037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaade52a0085d5946980f397a02611e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  offset: 200
+  movingSpeed: 0.08
 --- !u!1 &405400862
 GameObject:
   m_ObjectHideFlags: 0
@@ -782,6 +797,7 @@ GameObject:
   - component: {fileID: 405400865}
   - component: {fileID: 405400864}
   - component: {fileID: 405400867}
+  - component: {fileID: 405400868}
   m_Layer: 5
   m_Name: MainMenu
   m_TagString: Untagged
@@ -894,6 +910,18 @@ MonoBehaviour:
   highScoreEasyText: {fileID: 802367528}
   highScoreMediumText: {fileID: 220575398}
   highScoreHardText: {fileID: 1113279971}
+--- !u!225 &405400868
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 405400862}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1001 &439647859
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1262,7 +1290,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 410.32507, y: -202.10498}
+  m_AnchoredPosition: {x: 410.32504, y: -202.10498}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &917174873
@@ -2791,7 +2819,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!50 &2093188349
 Rigidbody2D:
   serializedVersion: 4
@@ -2946,7 +2974,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5322767948280162230, guid: 05b621e8068dea64da7dff76f65f4fc5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5322767948280162230, guid: 05b621e8068dea64da7dff76f65f4fc5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -2986,7 +3014,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5322767948280162230, guid: 05b621e8068dea64da7dff76f65f4fc5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: ToggleGameObject
+      value: ToggleCanvasGroup
       objectReference: {fileID: 0}
     - target: {fileID: 5322767948280162230, guid: 05b621e8068dea64da7dff76f65f4fc5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -3015,7 +3043,7 @@ PrefabInstance:
     - target: {fileID: 5322767948280162230, guid: 05b621e8068dea64da7dff76f65f4fc5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 378265037}
+      objectReference: {fileID: 405400868}
     - target: {fileID: 5322767948280162230, guid: 05b621e8068dea64da7dff76f65f4fc5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.GameObject, UnityEngine
@@ -3026,7 +3054,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5322767948280162230, guid: 05b621e8068dea64da7dff76f65f4fc5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
+      value: UnityEngine.CanvasGroup, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 6244023128648605051, guid: 05b621e8068dea64da7dff76f65f4fc5, type: 3}
       propertyPath: m_Pivot.x
