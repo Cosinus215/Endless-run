@@ -63,8 +63,8 @@ public class Player : MonoBehaviour, IDamageable {
 
     private void OnCollisionExit2D(Collision2D collision) {
         if (collision.contacts.Length == 0) {
-            StartCoroutine(RotatePlayer());
             isGrounded = false;
+            StartCoroutine(RotatePlayer());
         }
 
     }
@@ -90,16 +90,19 @@ public class Player : MonoBehaviour, IDamageable {
         Quaternion targetRotation = Quaternion.Euler(0, 0, finalRotation);
         float timeCount = 0.0f;
         float angleDifferenceThreshold = 0.01f;
+        Quaternion inversedRot = Quaternion.identity;
 
         while (Quaternion.Angle(transform.rotation, targetRotation) > angleDifferenceThreshold) {
             float t = timeCount * rotationSpeed;
             float newZRotation = Mathf.Lerp(finalRotation - 180, finalRotation, t);
             Quaternion newRotation = Quaternion.Euler(0, 0, newZRotation);
-            transform.rotation = Quaternion.Inverse(newRotation);
+            inversedRot = Quaternion.Inverse(newRotation);
+            transform.rotation = inversedRot;
 
             timeCount += Time.deltaTime;
             yield return null;
         }
+        transform.rotation = inversedRot;
     }
 
 }
