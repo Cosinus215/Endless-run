@@ -91,6 +91,12 @@ public class ButtonManager : ScriptableObject {
         objectToActivate.SetActive(!objectToActivate.activeSelf);
     }
 
+    public void ToggleMenu(LevelMenu menu) {
+        
+        menu.StartMoving();
+
+    }
+
     public void TogglePauseGame(CanvasGroup canvasGroup) {
         Time.timeScale = (Time.timeScale == 1f) ? 0.0f : 1.0f;
         canvasGroup.interactable = !canvasGroup.interactable;
