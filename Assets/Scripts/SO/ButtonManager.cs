@@ -71,14 +71,14 @@ public class ButtonManager : ScriptableObject {
     //    settings.IsSoundEffectOn = audioSourceMuted;
     //}
     //
-    //public void ChangeGraphicsSetting(int graphicsLevel) {
-    //    if (settings.IsLoaded == false) return;
-    //
-    //    graphicsLevel = Mathf.Clamp(graphicsLevel, 0, QualitySettings.names.Length - 1);
-    //    QualitySettings.SetQualityLevel(graphicsLevel, true);
-    //
-    //    settings.GraphicsLevel = graphicsLevel;
-    //}
+    public void ChangeGraphicsSetting(int graphicsLevel) {
+        //if (settings.IsLoaded == false) return;
+    
+        //graphicsLevel = Mathf.Clamp(graphicsLevel, 0, QualitySettings.names.Length - 1);
+        QualitySettings.SetQualityLevel(graphicsLevel, true);
+    
+        //settings.GraphicsLevel = graphicsLevel;
+    }
     //
     //private void PlayButtonClickSound() {
     //    if (clickSound == null) return;
