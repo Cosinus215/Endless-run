@@ -1,10 +1,11 @@
 using System.Collections;
-using UnityEditor;
 using UnityEngine;
 
-public class LevelMenu : MonoBehaviour {
-    [SerializeField] private float offset;
-    [SerializeField] private float movingSpeed;
+public class PanelSlider : MonoBehaviour {
+    [SerializeField] private float offset = 200;
+    [SerializeField] private CanvasGroup mainMenu;
+    [SerializeField] private ButtonManager buttonManager;
+    [SerializeField] private float movingSpeed = 0.05f;
     private RectTransform rectTransform;
     private float startingPos;
     private float sizeDeltaX;
@@ -14,7 +15,6 @@ public class LevelMenu : MonoBehaviour {
 
     private void Awake() {
         rectTransform = GetComponent<RectTransform>();
-        
     }
 
     private void Start() {
@@ -24,17 +24,13 @@ public class LevelMenu : MonoBehaviour {
     }
 
     public void StartMoving() {
-        if (i == 0) {
-            StartCoroutine(SlowlyMove(finalPos));
-            i++;
-            return;
-        }
-        i = 0;
-
-        StartCoroutine(SlowlyMove(startingPos));
+        StartCoroutine(i == 0 ? SlowlyMove(finalPos) : SlowlyMove(startingPos));
+        i = (i + 1) % 2;
     }
 
     private IEnumerator SlowlyMove(float destination) {
+        buttonManager.ToggleCanvasGroup(mainMenu);
+        timeCount = 0;
         while (CanMove(destination)) {
             float t = timeCount * movingSpeed;
             float finalX = Mathf.Lerp(
@@ -50,6 +46,7 @@ public class LevelMenu : MonoBehaviour {
             timeCount += Time.deltaTime;
             yield return null;
         }
+        buttonManager.ToggleCanvasGroup(mainMenu);
     }
 
     private bool CanMove(float destination) {

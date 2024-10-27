@@ -22,7 +22,7 @@ public class ButtonManager : ScriptableObject {
     }
 
     public void ToggleCanvasGroup(CanvasGroup canvasGroup) {
-        canvasGroup.interactable = false;
+        canvasGroup.interactable = !canvasGroup.interactable;
     }
 
     //public void SwitchMusic(AudioClip backgroundMusic) {
@@ -91,8 +91,7 @@ public class ButtonManager : ScriptableObject {
         objectToActivate.SetActive(!objectToActivate.activeSelf);
     }
 
-    public void ToggleMenu(LevelMenu menu) {
-        
+    public void ToggleMenu(PanelSlider menu) {
         menu.StartMoving();
 
     }

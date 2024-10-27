@@ -783,6 +783,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offset: 200
+  mainMenu: {fileID: 405400868}
+  buttonManager: {fileID: 11400000, guid: 084b33e97b34f39479ca0575b21f0a3e, type: 2}
   movingSpeed: 0.05
 --- !u!1 &405400862
 GameObject:
@@ -3043,14 +3045,14 @@ PrefabInstance:
     - target: {fileID: 5322767948280162230, guid: 05b621e8068dea64da7dff76f65f4fc5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 378265041}
+      objectReference: {fileID: 0}
     - target: {fileID: 5322767948280162230, guid: 05b621e8068dea64da7dff76f65f4fc5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 5322767948280162230, guid: 05b621e8068dea64da7dff76f65f4fc5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: LevelMenu, Assembly-CSharp
+      value: PanelSlider, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5322767948280162230, guid: 05b621e8068dea64da7dff76f65f4fc5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
