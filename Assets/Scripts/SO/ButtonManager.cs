@@ -93,7 +93,6 @@ public class ButtonManager : ScriptableObject {
 
     public void ToggleMenu(PanelSlider menu) {
         menu.StartMoving();
-
     }
 
     public void TogglePauseGame(CanvasGroup canvasGroup) {

@@ -1,4 +1,5 @@
 using System.Collections;
+using UnityEditor;
 using UnityEngine;
 
 public class PanelSlider : MonoBehaviour {
@@ -23,9 +24,21 @@ public class PanelSlider : MonoBehaviour {
         startingPos = rectTransform.anchoredPosition.x;
     }
 
-    public void StartMoving() {
-        StartCoroutine(i == 0 ? SlowlyMove(finalPos) : SlowlyMove(startingPos));
-        i = (i + 1) % 2;
+    public void StartMoving() { 
+        if (i == 0) {
+            PanelSlider otherMenu = MainMenuManager.instance.GetOpenedMenu();
+            if (otherMenu != null) {
+                buttonManager.ToggleMenu(otherMenu);
+            }
+            MainMenuManager.instance.SetOpenedMenu(this);
+            StartCoroutine(SlowlyMove(finalPos)); 
+            i++;
+            return; 
+        }
+
+        i = 0; 
+        StartCoroutine(SlowlyMove(startingPos)); 
+        MainMenuManager.instance.SetOpenedMenu(null);
     }
 
     private IEnumerator SlowlyMove(float destination) {

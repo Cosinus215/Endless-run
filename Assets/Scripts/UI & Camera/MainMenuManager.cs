@@ -1,4 +1,5 @@
 using Helpers;
+using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -18,6 +19,7 @@ public class MainMenuManager : MonoBehaviour {
     private BackgroundColor backgroundColor;
     private AudioListener audioListener;
     private float cameraHorizontalBorder;
+    private PanelSlider openedMenu;
 
     private void Awake() {
         instance = this;
@@ -95,5 +97,13 @@ public class MainMenuManager : MonoBehaviour {
         backgroundColor.enabled = true;
         audioListener.enabled = false;
         EventSystem.current.enabled = false;
+    }
+
+    public void SetOpenedMenu(PanelSlider menu) {
+        openedMenu = menu;
+    } 
+    
+    public PanelSlider GetOpenedMenu() {
+        return openedMenu;
     }
 }
