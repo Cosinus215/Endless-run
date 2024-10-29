@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenuManager : MonoBehaviour {
     public static MainMenuManager instance;
-    [SerializeField] private GameObject cube;
+    [SerializeField] private GameObject player;
     [SerializeField] private GameObject canvaToMove;
     [SerializeField] private HighScores highScores;
     [SerializeField] private TextMeshProUGUI highScoreEasyText;
@@ -93,7 +93,7 @@ public class MainMenuManager : MonoBehaviour {
     }
 
     private void OnStartAnimation() {
-        cube.SetActive(false);
+        player.SetActive(false);
         backgroundColor.enabled = true;
         audioListener.enabled = false;
         EventSystem.current.enabled = false;
