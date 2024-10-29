@@ -29,55 +29,24 @@ public class ButtonManager : ScriptableObject {
     //    MusicManager.instance.PlayMusic(backgroundMusic);
     //}
     //
-    //public void GameWon() {
-    //    LevelManager.instance.GetLevelTemplate().SetIsWon(true);
-    //}
-    //
-    //public void SoundSlider(float value) {
-    //    if (settings.IsLoaded == false) return;
-    //
-    //    SoundManager.instance.GetAudioSource().volume = value;
-    //
-    //    settings.SoundEffectSlider = value;
-    //}
-    //
-    //public void MusicSlider(float value) {
-    //    if (settings.IsLoaded == false) return;
-    //
-    //    MusicManager.instance.GetAudioSource().volume = value;
-    //
-    //    settings.BackgroundMusicSlider = value;
-    //}
-    //
-    //public void ToggleMusic() {
-    //    if (settings.IsLoaded == false) return;
-    //
-    //    bool audioSourceMuted = 
-    //        MusicManager.instance.GetAudioSource().mute;
-    //
-    //    MusicManager.instance.GetAudioSource().mute = !audioSourceMuted;
-    //
-    //    settings.IsBackgroundMusicOn = audioSourceMuted;
-    //}
-    //
-    //public void ToggleSoundEffects() {
-    //    if (settings.IsLoaded == false) return;
-    //
-    //    bool audioSourceMuted =
-    //       SoundManager.instance.GetAudioSource().mute;
-    //
-    //    SoundManager.instance.GetAudioSource().mute = !audioSourceMuted;
-    //
-    //    settings.IsSoundEffectOn = audioSourceMuted;
-    //}
-    //
-    public void ChangeGraphicsSetting(int graphicsLevel) {
+    public void SoundSlider(float value) {
         //if (settings.IsLoaded == false) return;
     
-        //graphicsLevel = Mathf.Clamp(graphicsLevel, 0, QualitySettings.names.Length - 1);
-        QualitySettings.SetQualityLevel(graphicsLevel, true);
+        SoundManager.instance.GetAudioSource().volume = value;
     
-        //settings.GraphicsLevel = graphicsLevel;
+        //settings.SoundEffectSlider = value;
+    }
+    
+    public void MusicSlider(float value) {
+        //if (settings.IsLoaded == false) return;
+    
+        MusicManager.instance.GetAudioSource().volume = value;
+    
+        //settings.BackgroundMusicSlider = value;
+    }
+
+    public void ChangeGraphicsSetting(int graphicsLevel) {
+        QualitySettings.SetQualityLevel(graphicsLevel, true);
     }
     //
     //private void PlayButtonClickSound() {
@@ -92,12 +61,8 @@ public class ButtonManager : ScriptableObject {
     }
 
     public void ToggleMenu(PanelSlider menu) {
+        //PlayButtonClickSound();
         menu.StartMoving();
-    }
-
-    public void TogglePauseGame(CanvasGroup canvasGroup) {
-        Time.timeScale = (Time.timeScale == 1f) ? 0.0f : 1.0f;
-        canvasGroup.interactable = !canvasGroup.interactable;
     }
 
     public void ExitGame() {
