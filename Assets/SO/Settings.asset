@@ -9,7 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0fa49de56703528409090ecdb6a1c554, type: 3}
-  m_Name: ButtonManager
+  m_Script: {fileID: 11500000, guid: 5e8379fee276c2748acee1041035b386, type: 3}
+  m_Name: Settings
   m_EditorClassIdentifier: 
-  settings: {fileID: 11400000, guid: 6f59dc8d030a6d140ba3e0fc3e755528, type: 2}

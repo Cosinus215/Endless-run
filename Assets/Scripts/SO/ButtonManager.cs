@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 
 [CreateAssetMenu(fileName = "ButtonManager", menuName = "ButtonManager/New ButtonManager")]
 public class ButtonManager : ScriptableObject {
+    [SerializeField] private Settings settings;
 
     public void LoadGamePlayScene() {
         MainMenuManager.instance.StartMovingCanvas();
@@ -30,19 +31,19 @@ public class ButtonManager : ScriptableObject {
     //}
     //
     public void SoundSlider(float value) {
-        //if (settings.IsLoaded == false) return;
+        if (settings.IsLoaded == false) return;
     
         SoundManager.instance.GetAudioSource().volume = value;
     
-        //settings.SoundEffectSlider = value;
+        settings.SoundEffectSlider = value;
     }
     
     public void MusicSlider(float value) {
-        //if (settings.IsLoaded == false) return;
+        if (settings.IsLoaded == false) return;
     
         MusicManager.instance.GetAudioSource().volume = value;
     
-        //settings.BackgroundMusicSlider = value;
+        settings.BackgroundMusicSlider = value;
     }
 
     public void ChangeGraphicsSetting(int graphicsLevel) {
