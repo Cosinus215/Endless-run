@@ -2,16 +2,19 @@ using UnityEngine;
 
 [CreateAssetMenu(fileName = "Settings", menuName = "Settings/New Settings")]
 public class Settings : ScriptableObject {
-    public float BackgroundMusicSlider { get; set; }
-    public float SoundEffectSlider { get; set; }
+    [Range(0, 1)][SerializeField] private float backgroundMusicSlider;
+    [Range(0, 1)][SerializeField] private float soundEffectSlider;
+
+    public int SelectedGraphics { private get; set; }
     public bool IsLoaded { get; set; }
 
     public void OnSettingsOpen() {
-        SettingsManager.instance.GetMusicSlider().value = 
-            BackgroundMusicSlider;
+        SettingsManager settings = SettingsManager.instance;
 
-        SettingsManager.instance.GetSoundEffectsSlider().value = 
-            SoundEffectSlider;
+        settings.GetMusicSlider().value = backgroundMusicSlider;
+        settings.GetSoundEffectsSlider().value = soundEffectSlider;
+
+        settings.SetGrapgicSetting(SelectedGraphics);
         IsLoaded = true;
     }
 
@@ -19,4 +22,11 @@ public class Settings : ScriptableObject {
         IsLoaded = false;
     }
 
+    public void SetBackgroundMusicSlider(float value) {
+        backgroundMusicSlider = value;
+    }
+
+    public void SetSoundEffectSlider(float value) {
+        soundEffectSlider = value;
+    }
 }

@@ -35,7 +35,7 @@ public class ButtonManager : ScriptableObject {
     
         SoundManager.instance.GetAudioSource().volume = value;
     
-        settings.SoundEffectSlider = value;
+        settings.SetSoundEffectSlider(value);
     }
     
     public void MusicSlider(float value) {
@@ -43,11 +43,13 @@ public class ButtonManager : ScriptableObject {
     
         MusicManager.instance.GetAudioSource().volume = value;
     
-        settings.BackgroundMusicSlider = value;
+        settings.SetBackgroundMusicSlider(value);
     }
 
     public void ChangeGraphicsSetting(int graphicsLevel) {
         QualitySettings.SetQualityLevel(graphicsLevel, true);
+
+        settings.SelectedGraphics = graphicsLevel;
     }
     //
     //private void PlayButtonClickSound() {

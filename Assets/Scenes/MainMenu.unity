@@ -1038,6 +1038,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &497144961 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3141193875822269109, guid: adaba9d89a1442d468e46c2a2ffeaf92, type: 3}
+  m_PrefabInstance: {fileID: 8621156936409639595}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &507370622
 GameObject:
   m_ObjectHideFlags: 0
@@ -2444,6 +2455,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6244023128648605051, guid: 05b621e8068dea64da7dff76f65f4fc5, type: 3}
   m_PrefabInstance: {fileID: 1615691256}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1729192535 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3554997296454741279, guid: adaba9d89a1442d468e46c2a2ffeaf92, type: 3}
+  m_PrefabInstance: {fileID: 8621156936409639595}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1847817418 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4856019156279927726, guid: 5cec54aec9ddd5841b39c7c4db4d36bd, type: 3}
@@ -2588,6 +2610,17 @@ Camera:
   m_CorrespondingSourceObject: {fileID: 2190256411485273269, guid: 6c869c406c70e2846b19b65500daad58, type: 3}
   m_PrefabInstance: {fileID: 439647859}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1898216868 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7056287494130243459, guid: adaba9d89a1442d468e46c2a2ffeaf92, type: 3}
+  m_PrefabInstance: {fileID: 8621156936409639595}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1905562926
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3598,9 +3631,21 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7413529954154277756, guid: adaba9d89a1442d468e46c2a2ffeaf92, type: 3}
+      propertyPath: lowGraphicsButton
+      value: 
+      objectReference: {fileID: 1898216868}
+    - target: {fileID: 7413529954154277756, guid: adaba9d89a1442d468e46c2a2ffeaf92, type: 3}
+      propertyPath: highGraphicsButton
+      value: 
+      objectReference: {fileID: 497144961}
+    - target: {fileID: 7413529954154277756, guid: adaba9d89a1442d468e46c2a2ffeaf92, type: 3}
       propertyPath: soundEffectsSlider
       value: 
       objectReference: {fileID: 985037972}
+    - target: {fileID: 7413529954154277756, guid: adaba9d89a1442d468e46c2a2ffeaf92, type: 3}
+      propertyPath: mediumGraphicsButton
+      value: 
+      objectReference: {fileID: 1729192535}
     - target: {fileID: 7413529954154277756, guid: adaba9d89a1442d468e46c2a2ffeaf92, type: 3}
       propertyPath: backgroundMusicSlider
       value: 
