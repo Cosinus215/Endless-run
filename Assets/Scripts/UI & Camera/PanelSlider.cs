@@ -1,5 +1,4 @@
 using System.Collections;
-using UnityEditor;
 using UnityEngine;
 
 public class PanelSlider : MonoBehaviour {
@@ -12,7 +11,8 @@ public class PanelSlider : MonoBehaviour {
     private float sizeDeltaX;
     private float finalPos;
     private float timeCount;
-    private int i = 0;
+    private bool menuOpened;
+    private IEnumerator currentMoveCoroutine;
 
     private void Awake() {
         rectTransform = GetComponent<RectTransform>();
@@ -24,42 +24,68 @@ public class PanelSlider : MonoBehaviour {
         startingPos = rectTransform.anchoredPosition.x;
     }
 
-    public void StartMoving() { 
-        if (i == 0) {
-            PanelSlider otherMenu = MainMenuManager.instance.GetOpenedMenu();
-            if (otherMenu != null) {
-                buttonManager.ToggleMenu(otherMenu);
-            }
-            MainMenuManager.instance.SetOpenedMenu(this);
-            StartCoroutine(SlowlyMove(finalPos)); 
-            i++;
-            return; 
+    public void StartMoving() {
+        if (currentMoveCoroutine != null) {
+            return;
         }
 
-        i = 0; 
-        StartCoroutine(SlowlyMove(startingPos)); 
+        // Toggle main menu buttons
+        buttonManager.ToggleCanvasGroup(mainMenu);
+
+        // Check if the menu should be closed or open
+        if (!menuOpened) {
+            // Check if there is other open menu
+            PanelSlider otherMenu = MainMenuManager.instance.GetOpenedMenu();
+            if (otherMenu != null) {
+                // Hide the other open menu
+                buttonManager.ToggleMenu(otherMenu);
+            }
+
+            // Set new open menu to the open one
+            MainMenuManager.instance.SetOpenedMenu(this);
+
+            // Open the new menu
+            currentMoveCoroutine = SlowlyMove(finalPos);
+            StartCoroutine(currentMoveCoroutine);
+            menuOpened = true;
+            return;
+        }
+
+        menuOpened = false;
+
+        // Close now open menu
+        currentMoveCoroutine = SlowlyMove(startingPos);
+        StartCoroutine(currentMoveCoroutine);
         MainMenuManager.instance.SetOpenedMenu(null);
     }
 
     private IEnumerator SlowlyMove(float destination) {
-        buttonManager.ToggleCanvasGroup(mainMenu);
         timeCount = 0;
+
+        // Loop while the menu to open is not yet at the destination
         while (CanMove(destination)) {
             float t = timeCount * movingSpeed;
+
+            // Calculate slowly way to the destination
             float finalX = Mathf.Lerp(
                 rectTransform.anchoredPosition.x,
                 destination,
                 t
             );
-            
+
+            // Set new position of the menu
             rectTransform.anchoredPosition = new Vector2(
-                finalX, 
+                finalX,
                 rectTransform.anchoredPosition.y
             );
+
             timeCount += Time.deltaTime;
             yield return null;
         }
+
+        // Toggle main menu buttons
         buttonManager.ToggleCanvasGroup(mainMenu);
+        currentMoveCoroutine = null;
     }
 
     private bool CanMove(float destination) {
