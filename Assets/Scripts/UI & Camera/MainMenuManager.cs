@@ -1,5 +1,3 @@
-using Helpers;
-using System;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -28,10 +26,10 @@ public class MainMenuManager : MonoBehaviour {
     private void Start() {
         GetDefaultVariables();
         LoadGameplayScene();
-        SetHigScores();
+        SetHighScores();
     }
     
-    private void SetHigScores() {
+    private void SetHighScores() {
         foreach (HighScore score in highScores.GetHighScores()) {
 
             switch (score.levelName) {
@@ -54,7 +52,7 @@ public class MainMenuManager : MonoBehaviour {
         backgroundColor = mainCamera.GetComponent<BackgroundColor>();
         audioListener = mainCamera.GetComponent<AudioListener>();
         cameraHorizontalBorder =
-            CameraHelper.GetCameraBordersWorldPosition().x / 2;
+            Helpers.CameraHelper.GetCameraBordersWorldPosition().x / 2;
     }
 
     private void LoadGameplayScene() {

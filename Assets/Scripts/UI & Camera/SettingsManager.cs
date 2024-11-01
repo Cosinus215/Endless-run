@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -21,6 +20,10 @@ public class SettingsManager : MonoBehaviour {
     }
 
     private void Start() {
+        AddGraphicSettingToList();
+    }
+
+    private void AddGraphicSettingToList() {
         graphicSetting.Add(lowGraphicsButton);
         graphicSetting.Add(mediumGraphicsButton);
         graphicSetting.Add(highGraphicsButton);

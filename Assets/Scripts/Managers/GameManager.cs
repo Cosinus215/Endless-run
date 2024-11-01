@@ -23,11 +23,16 @@ public class GameManager : MonoBehaviour {
         Vector2 screenBorders = 
             Helpers.CameraHelper.GetCameraBordersWorldPosition();
 
+        // Loop to create borders on both sides of the screen
         for (float i = -1; i < 2; i += 2) {
-            GameObject border = Instantiate(borderPrefab);
-
+            // Instantiate a border prefab
+            GameObject border = Instantiate(borderPrefab); 
+            
+            // Position the border at the edge of the screen
             border.transform.position = new Vector2((screenBorders.x * i) + i, 0);
         }
+
+        // Instantiate the border prefab for obstacles
         Instantiate(obstacleBorderPrefab);
     }
 
