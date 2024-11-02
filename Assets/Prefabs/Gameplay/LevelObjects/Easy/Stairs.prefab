@@ -9,6 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3246321290214087276}
+  - component: {fileID: -9165489526268259979}
+  - component: {fileID: -6588535920592213967}
+  - component: {fileID: -3969261654741869707}
   m_Layer: 0
   m_Name: Stairs
   m_TagString: Untagged
@@ -34,6 +37,93 @@ Transform:
   - {fileID: 2472291996830437986}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &-9165489526268259979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6018257303382412731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea0a9fff2cec3db4d90c28637c8246a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 0
+  obstacleEffect: {fileID: 0}
+  speed: 50
+--- !u!61 &-6588535920592213967
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6018257303382412731}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 15.5, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.46, y: 5.31}
+  m_EdgeRadius: 0
+--- !u!50 &-3969261654741869707
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6018257303382412731}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1001 &8345601009354810355
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -121,7 +211,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   obstacleEffect: {fileID: 0}
-  speed: 50
+  speed: 0
 --- !u!4 &3017551710256174594 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6499249156409603569, guid: 676bb56b0baf3fd46adbcb0860112524, type: 3}
@@ -223,7 +313,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   obstacleEffect: {fileID: 0}
-  speed: 50
+  speed: 0
 --- !u!1001 &9160074892030245224
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -320,4 +410,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 0
   obstacleEffect: {fileID: 0}
-  speed: 50
+  speed: 0
