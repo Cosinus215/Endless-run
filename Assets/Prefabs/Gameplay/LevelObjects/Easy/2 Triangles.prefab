@@ -360,7 +360,7 @@ GameObject:
   - component: {fileID: 2386197447459021891}
   - component: {fileID: 934034491900984946}
   - component: {fileID: -3204501224491778703}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: 2 Triangles
   m_TagString: Untagged
   m_Icon: {fileID: 0}

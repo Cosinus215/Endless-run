@@ -1404,7 +1404,7 @@ GameObject:
   - component: {fileID: 8774751009715551271}
   - component: {fileID: -8861233434711618601}
   - component: {fileID: -6856398358337610327}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: 3 Triangles
   m_TagString: Untagged
   m_Icon: {fileID: 0}

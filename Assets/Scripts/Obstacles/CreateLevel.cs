@@ -2,20 +2,28 @@ using System.Collections;
 using UnityEngine;
 
 public class CreateLevel : MonoBehaviour {
+    public static CreateLevel instance;
     [SerializeField] private Level level;
-    private Coroutine CreatObstacles;
+    private float spawnObstacleDelay;
+    private IEnumerator CreatObstaclesCoroutine;
     private Vector2 obstacleSpawnPoint;
+
+    private void Awake() {
+        if (instance != null) {
+            Destroy(this);
+        }
+        instance = this;
+    }
 
     private void Start() {
         SetObstaclesSpawnPoint();
-        CustomEvent.instance.onPlayerDie += StopSpawningObstacles;
 
         if (LevelManager.instance != null) {
             level = LevelManager.instance.GetChosenLevel();
-            return;
         }
 
-        CreatObstacles = StartCoroutine(CreatObstaclesCoroutine());
+        spawnObstacleDelay = level.GetSpawnObstacleDelay();
+        StartCreatObstaclesCoroutine();
     }
 
     private void SetObstaclesSpawnPoint() {
@@ -24,24 +32,24 @@ public class CreateLevel : MonoBehaviour {
         obstacleSpawnPoint = new Vector2(screenBorders.x + 3, 0);
     }
 
-    private IEnumerator CreatObstaclesCoroutine() {
-        while (true) {
-            yield return new WaitForSeconds(2);
-
-            if (level == null) yield return null;
-
-            int randomObstacle = Random.Range(0, level.GetObstacles().Count);
-
-            GameObject newObstacle = Instantiate(
-                level.GetObstacles()[randomObstacle], transform
-            );
-
-            newObstacle.transform.localPosition = obstacleSpawnPoint;
-
-        }
+    public void StartCreatObstaclesCoroutine() {
+        CreatObstaclesCoroutine = CreatObstacles();
+        StartCoroutine(CreatObstaclesCoroutine);
     }
 
-    private void StopSpawningObstacles() {
-        StopCoroutine(CreatObstacles);
+    public IEnumerator CreatObstacles() {
+
+        if (level == null) yield return null;
+
+        yield return new WaitForSeconds(spawnObstacleDelay);
+
+        int randomObstacle = Random.Range(0, level.GetObstacles().Count);
+
+        GameObject newObstacle = Instantiate(
+            level.GetObstacles()[randomObstacle], transform
+        );
+
+        newObstacle.transform.localPosition = obstacleSpawnPoint;
+
     }
 }

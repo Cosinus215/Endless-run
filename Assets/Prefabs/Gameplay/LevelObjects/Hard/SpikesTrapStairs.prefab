@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4428166252905726340}
   - component: {fileID: 2421138456296143388}
   - component: {fileID: -4951762056701462983}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SpikesTrapStairs
   m_TagString: Untagged
   m_Icon: {fileID: 0}

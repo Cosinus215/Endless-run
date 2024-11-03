@@ -30,6 +30,10 @@ public class GameManager : MonoBehaviour {
             
             // Position the border at the edge of the screen
             border.transform.position = new Vector2((screenBorders.x * i) + i, 0);
+
+            if (i > 0 && border.TryGetComponent(out Border b)) {
+                b.SetIsRightSide(true);
+            }
         }
 
         // Instantiate the border prefab for obstacles

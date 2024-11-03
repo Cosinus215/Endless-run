@@ -26,3 +26,4 @@ MonoBehaviour:
   - {fileID: 5760192869713379619, guid: 2ac4acca5d693d9448a4dc68873f1899, type: 3}
   - {fileID: 562379646235016868, guid: 9ac869f3d8ef2ce47aea9e4b6ccb7c0c, type: 3}
   levelName: 2
+  spawnObstacleDelay: 0.5

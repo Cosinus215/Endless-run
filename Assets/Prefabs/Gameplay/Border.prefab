@@ -114,7 +114,7 @@ BoxCollider2D:
     m_Bits: 4294967295
   m_CallbackLayers:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 192
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -143,3 +143,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aad0221ce86011f4dae2ea86ad26ef32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isForPlayer: 1

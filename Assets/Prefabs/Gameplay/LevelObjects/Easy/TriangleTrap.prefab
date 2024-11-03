@@ -708,7 +708,7 @@ GameObject:
   - component: {fileID: 228965238880098601}
   - component: {fileID: 3957496646721234482}
   - component: {fileID: -3021540411461242879}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TriangleTrap
   m_TagString: Untagged
   m_Icon: {fileID: 0}

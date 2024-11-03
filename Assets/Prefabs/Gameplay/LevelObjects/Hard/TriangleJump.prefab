@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3234337726103800179}
   - component: {fileID: -3243060065583195650}
   - component: {fileID: -6795619584159991017}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TriangleJump
   m_TagString: Untagged
   m_Icon: {fileID: 0}

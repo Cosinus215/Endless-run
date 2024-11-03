@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: -8616708867656245419}
   - component: {fileID: -9146490166198122849}
   - component: {fileID: 6115807705163111346}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: JumpPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -227,6 +227,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Triangle (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 5766572060701686029, guid: c7c7d5223f2e1be4087e255df4117913, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7300301563235157778, guid: c7c7d5223f2e1be4087e255df4117913, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4
@@ -339,6 +343,10 @@ PrefabInstance:
     - target: {fileID: 5766572060701686029, guid: c7c7d5223f2e1be4087e255df4117913, type: 3}
       propertyPath: m_Name
       value: Triangle (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766572060701686029, guid: c7c7d5223f2e1be4087e255df4117913, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300301563235157778, guid: c7c7d5223f2e1be4087e255df4117913, type: 3}
       propertyPath: m_LocalPosition.x
@@ -453,6 +461,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Triangle (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5766572060701686029, guid: c7c7d5223f2e1be4087e255df4117913, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7300301563235157778, guid: c7c7d5223f2e1be4087e255df4117913, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4
@@ -565,6 +577,10 @@ PrefabInstance:
     - target: {fileID: 5766572060701686029, guid: c7c7d5223f2e1be4087e255df4117913, type: 3}
       propertyPath: m_Name
       value: Triangle (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766572060701686029, guid: c7c7d5223f2e1be4087e255df4117913, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300301563235157778, guid: c7c7d5223f2e1be4087e255df4117913, type: 3}
       propertyPath: m_LocalPosition.x
@@ -679,6 +695,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Triangle (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 5766572060701686029, guid: c7c7d5223f2e1be4087e255df4117913, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7300301563235157778, guid: c7c7d5223f2e1be4087e255df4117913, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4
@@ -710,6 +730,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -5361586973385947381, guid: 69ca470fa1ac106428c2c117d8cb6cab, type: 3}
       propertyPath: speed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2528831062536758237, guid: 69ca470fa1ac106428c2c117d8cb6cab, type: 3}
+      propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7002877734440259291, guid: 69ca470fa1ac106428c2c117d8cb6cab, type: 3}
@@ -983,6 +1007,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Triangle
       objectReference: {fileID: 0}
+    - target: {fileID: 5766572060701686029, guid: c7c7d5223f2e1be4087e255df4117913, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7300301563235157778, guid: c7c7d5223f2e1be4087e255df4117913, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4
@@ -1096,6 +1124,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Triangle (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 5766572060701686029, guid: c7c7d5223f2e1be4087e255df4117913, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7300301563235157778, guid: c7c7d5223f2e1be4087e255df4117913, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4
@@ -1208,6 +1240,10 @@ PrefabInstance:
     - target: {fileID: 5766572060701686029, guid: c7c7d5223f2e1be4087e255df4117913, type: 3}
       propertyPath: m_Name
       value: Triangle (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5766572060701686029, guid: c7c7d5223f2e1be4087e255df4117913, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7300301563235157778, guid: c7c7d5223f2e1be4087e255df4117913, type: 3}
       propertyPath: m_LocalPosition.x
