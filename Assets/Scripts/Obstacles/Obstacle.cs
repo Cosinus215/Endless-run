@@ -9,13 +9,13 @@ public class Obstacle : MonoBehaviour, IDestroyable {
 
     private void Start() {
         CustomEvent.instance.onPlayerDie += StartToSlowDown;
-        speedMultiplier = GameManager.instance.GetSpeedMultiplier();
     }
 
     private void Update() {
+        speedMultiplier = GameManager.instance.GetSpeedMultiplier();
         transform.position = 
             new Vector2(
-                transform.position.x - 0.12f * speed * speedMultiplier * Time.deltaTime, 
+                transform.position.x - (0.12f * speed * speedMultiplier * Time.deltaTime), 
                 transform.position.y
             );
     }
@@ -42,8 +42,12 @@ public class Obstacle : MonoBehaviour, IDestroyable {
     }
 
     private IEnumerator SlowDown() {
-        while (speed > 0) {
-            speed = Mathf.MoveTowards(speed, 0f, 0.2f * Time.deltaTime);
+        while (GameManager.instance.GetSpeedMultiplier() > 0) {
+            float newSpeedMultiplier = GameManager.instance.GetSpeedMultiplier();
+            GameManager.instance.SetSpeedMultiplier(
+                Mathf.MoveTowards(newSpeedMultiplier, 0f, 0.1f * Time.deltaTime)
+            );
+
             yield return null;
         }
     }

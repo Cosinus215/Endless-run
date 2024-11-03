@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
@@ -42,5 +43,9 @@ public class GameManager : MonoBehaviour {
 
     public float GetSpeedMultiplier() {
         return speedMultiplier;
+    }
+    
+    public void SetSpeedMultiplier(float value) {
+        speedMultiplier = value;
     }
 }
