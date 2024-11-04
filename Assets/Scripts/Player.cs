@@ -14,7 +14,7 @@ public class Player : MonoBehaviour, IDamageable {
     [SerializeField] private Volume globalVolume;
     [SerializeField] private GameObject endGamePanel;
     private int finalRotation;
-    public Vector2 movementVector;
+    private Vector2 movementVector;
     private Rigidbody2D rb;
     private bool isJumping;
     private bool isGrounded;
@@ -33,20 +33,27 @@ public class Player : MonoBehaviour, IDamageable {
         rb.velocity = new Vector2(movementVector.x * speed * Time.fixedDeltaTime, rb.velocity.y);
 
         if (isJumping && Mathf.Abs(rb.velocity.y) < 0.01f && isGrounded) {
-            //StartCoroutine(RotatePlayer());
             rb.AddForce(Vector2.up * jumpingForce, ForceMode2D.Impulse);
-            //Debug.Log("JUMP");
         }
     }
 
     public void Damage(int value) {
         health -= value;
         if (health < 1) {
-            spriteRenderer.enabled = false;
             cubeDiedParticles.Play();
             EnableEndGameUI();
             CustomEvent.instance.PlayerDie();
+            DisablePlayer();
         }
+    }
+
+    private void DisablePlayer() {
+        rb.bodyType = RigidbodyType2D.Static;
+        spriteRenderer.enabled = false;
+        if (TryGetComponent(out LineRenderer lR))
+            lR.enabled = false;
+        transform.GetChild(0).gameObject.SetActive(false);
+        this.enabled = false;
     }
 
     private void EnableEndGameUI() {
@@ -105,4 +112,7 @@ public class Player : MonoBehaviour, IDamageable {
         transform.rotation = inversedRot;
     }
 
+    public Vector2 GetMovementVector() {
+        return movementVector;
+    }
 }

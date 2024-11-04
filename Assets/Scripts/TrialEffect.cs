@@ -67,10 +67,10 @@ public class TrialEffect : MonoBehaviour {
             Vector3 playerPos = transform.position;
 
             // Player is moving
-            moveVector = new Vector3(moveSpeedMoving * player.movementVector.x, 0, 0);
+            moveVector = new Vector3(moveSpeedMoving * player.GetMovementVector().x, 0, 0);
 
             // Player is not moving
-            if (player.movementVector == Vector2.zero) {
+            if (player.GetMovementVector() == Vector2.zero) {
                 moveVector = new Vector3(moveSpeedNotMoving, 0, 0);
             }
 
