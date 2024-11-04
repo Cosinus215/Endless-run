@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e8379fee276c2748acee1041035b386, type: 3}
   m_Name: Settings
   m_EditorClassIdentifier: 
-  backgroundMusicSlider: 0.4484009
-  soundEffectSlider: 0.8256515
+  backgroundMusicSlider: 1
+  soundEffectSlider: 1
