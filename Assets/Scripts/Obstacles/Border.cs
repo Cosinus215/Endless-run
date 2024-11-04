@@ -9,13 +9,13 @@ public class Border : MonoBehaviour {
     }
 
     private void DestroyBorder() {
-        Destroy(gameObject);
+        if (TryGetComponent(out BoxCollider2D c))
+            c.enabled = false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision) { 
         if (collision.TryGetComponent(out IDestroyable iDestroyable)) {
             if (isRightSide) {
-                //Debug.Log("SPAWN");
                 CreateLevel.instance.StartCreatObstaclesCoroutine();
                 return;
             }
