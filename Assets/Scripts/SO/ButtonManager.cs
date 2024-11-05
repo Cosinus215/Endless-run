@@ -26,10 +26,10 @@ public class ButtonManager : ScriptableObject {
         canvasGroup.interactable = !canvasGroup.interactable;
     }
 
-    //public void SwitchMusic(AudioClip backgroundMusic) {
-    //    MusicManager.instance.PlayMusic(backgroundMusic);
-    //}
-    //
+    public void SwitchMusic(AudioClip backgroundMusic) {
+        MusicManager.instance.PlayMusic(backgroundMusic);
+    }
+    
     public void SoundSlider(float value) {
         if (settings.IsLoaded == false) return;
     

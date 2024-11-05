@@ -553,6 +553,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 11400000, guid: 084b33e97b34f39479ca0575b21f0a3e, type: 2}
         m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
+        m_MethodName: SwitchMusic
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: e7f7921240f75d142b5fa7083759042c, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 084b33e97b34f39479ca0575b21f0a3e, type: 2}
+        m_TargetAssemblyTypeName: ButtonManager, Assembly-CSharp
         m_MethodName: LoadMenuScene
         m_Mode: 1
         m_Arguments:

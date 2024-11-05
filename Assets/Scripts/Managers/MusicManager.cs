@@ -7,17 +7,29 @@ public class MusicManager : MonoBehaviour {
     public float test;
     public float speed;
 
-    private void Awake() {
-        audioSource = GetComponent<AudioSource>();
+    void Awake() {
+        DontDestroyOnLoad(gameObject);
 
-        if (instance != null) {
-            Destroy(this);
+        if (instance == null) {
+            instance = this;
+        } else {
+            Destroy(gameObject);
         }
-        instance = this;
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Start() {
         StartCoroutine(PingPongStereoPan());
+    }
+
+    public AudioSource GetAudioSource() {
+        return audioSource;
+    }
+
+    public void PlayMusic(AudioClip clip) {
+        audioSource.clip = clip;
+        audioSource.Play();
     }
 
     private IEnumerator PingPongStereoPan() {
@@ -25,9 +37,5 @@ public class MusicManager : MonoBehaviour {
             audioSource.panStereo = Mathf.PingPong(Time.time * speed, 2) - 1;
             yield return null;
         }
-    }
-
-    public AudioSource GetAudioSource() {
-        return audioSource;
     }
 }
