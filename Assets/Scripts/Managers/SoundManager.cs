@@ -4,17 +4,24 @@ public class SoundManager : MonoBehaviour {
     private AudioSource audioSource;
     public static SoundManager instance;
 
+    void Awake() {
+        DontDestroyOnLoad(gameObject);
 
-    private void Awake() {
-        audioSource = GetComponent<AudioSource>();
-
-        if (instance != null) {
-            Destroy(this);
+        if (instance == null) {
+            instance = this;
+        } else {
+            Destroy(gameObject);
         }
-        instance = this;
+
+        audioSource = GetComponent<AudioSource>();
     }
+
 
     public AudioSource GetAudioSource() {
         return audioSource;
+    }
+
+    public void PlaySound() {
+        audioSource.Play();
     }
 }

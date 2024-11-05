@@ -7,18 +7,22 @@ public class ButtonManager : ScriptableObject {
     [SerializeField] private Settings settings;
 
     public void LoadGamePlayScene() {
+        PlayButtonClickSound();
         MainMenuManager.instance.StartMovingCanvas();
     } 
     
     public void RestartGamePlayScene() {
+        PlayButtonClickSound();
         SceneManager.LoadScene(1);
     }
     
     public void LoadMenuScene() {
+        PlayButtonClickSound();
         SceneManager.LoadScene(0);
     }
 
     public void SetLevel(Level level) {
+        PlayButtonClickSound();
         LevelManager.instance.SetChosenLevel(level);
     }
 
@@ -47,24 +51,23 @@ public class ButtonManager : ScriptableObject {
     }
 
     public void ChangeGraphicsSetting(int graphicsLevel) {
+        PlayButtonClickSound();
         QualitySettings.SetQualityLevel(graphicsLevel, true);
 
         settings.SelectedGraphics = graphicsLevel;
     }
-    //
-    //private void PlayButtonClickSound() {
-    //    if (clickSound == null) return;
-    //
-    //    SoundManager.instance.PlaySound(clickSound);
-    //}
+    
+    private void PlayButtonClickSound() {
+        SoundManager.instance.PlaySound();
+    }
 
     public void ToggleGameObject(GameObject objectToActivate) {
-        //PlayButtonClickSound();
+        PlayButtonClickSound();
         objectToActivate.SetActive(!objectToActivate.activeSelf);
     }
 
     public void ToggleMenu(PanelSlider menu) {
-        //PlayButtonClickSound();
+        PlayButtonClickSound();
         menu.StartMoving();
     }
 
