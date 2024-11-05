@@ -14,15 +14,14 @@ public class LevelManager : MonoBehaviour {
         chosenLevel = value;
     }
 
-    private void Awake() {
+    void Awake() {
+        DontDestroyOnLoad(gameObject);
+
         if (instance == null) {
             instance = this;
-        } else { 
-            Destroy(instance);
-            instance = this;
+        } else {
+            Destroy(gameObject);
         }
-
-        DontDestroyOnLoad(gameObject);
     }
 
 
